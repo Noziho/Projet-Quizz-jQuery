@@ -43,3 +43,17 @@ h1 {
     height: 40rem;
     margin-top: 5%;
 }
+
+button {
+    width: 30%;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #823fff;
+}
+
+p + div {
+    margin-top: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
