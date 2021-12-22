@@ -22,7 +22,9 @@ let reponse = [
     ["Logitech G502", "Razer DeathAdder V2 Pro"],
     ["GTA V", " The Elder Scrolls V: Skyrim", "Minecraft", "Fortnite"],
     ["Java", "C/C++", "Python", "JavaScript"]
-]
+];
+let wrongAnswer = [];
+
 
 $('#containerQuestions').append('<input id="questionResponse" type="text" placeholder="Entrez votre réponse"/>')
 let inputResponse = $('#questionResponse').hide();
@@ -37,61 +39,127 @@ $('#startGame').click(function () {
         $('#welcomeText').html(questions[counter].toString());
         $('#reponse').html(reponse[counter].toString() + '<br>');
         inputResponse.show();
-        inputResponse.html('')
 
-        if(questions[0] && inputResponse.get(0).value === "10") {
-            point++;
-            console.log(point);
-        }
+        if (counter === 1) {
+            if(inputResponse.get(0).value === "10") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 1: Faux la réponse été, 10");
+                console.log(wrongAnswer);
+            }
 
-        if(questions[1] && inputResponse.get(0).value === "67 millions" ||inputResponse.get(0).value === "67" ||inputResponse.get(0).value === "67millions") {
-            point++;
-            console.log(point);
         }
-        if(questions[2] && inputResponse.get(0).value === "One piece" ||inputResponse.get(0).value === "one piece") {
-            point++;
-            console.log(point);
-        }
-        if(questions[3] && inputResponse.get(0).value === "Burj Khalifa" ||inputResponse.get(0).value === "burj khalifa") {
-            point++;
-            console.log(point);
-        }
-        if(questions[4] && inputResponse.get(0).value === "30" ||inputResponse.get(0).value === "30 saisons") {
-            point++;
-            console.log(point);
-        }
-        if(questions[5] && inputResponse.get(0).value === "Ninho" ||inputResponse.get(0).value === "ninho") {
-            point++;
-            console.log(point);
+        if (counter === 2) {
+            if(inputResponse.get(0).value === "67 millions" ||inputResponse.get(0).value === "67" ||inputResponse.get(0).value === "67millions") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 2: Faux la réponse été, 67 millions");
+                console.log(wrongAnswer);
+            }
         }
 
-        if(questions[6] && inputResponse.get(0).value === "Baby Shark" ||inputResponse.get(0).value === "baby shark" ||inputResponse.get(0).value === "Babyshark" ||inputResponse.get(0).value === "BabyShark" ||inputResponse.get(0).value === "babyshark") {
-            point++;
-            console.log(point);
-        }
-        if(questions[7] && inputResponse.get(0).value === "Logitech G502" ||inputResponse.get(0).value ==="logitech G502" ||inputResponse.get(0).value === "logitech g502") {
-            point++;
-            console.log(point);
-        }
-        if(questions[8] && inputResponse.get(0).value === "Minecraft" ||inputResponse.get(0).value === "minecraft") {
-            point++;
-            console.log(point);
-        }
-        if(questions[9] && inputResponse.get(0).value === "Java" ||inputResponse.get(0).value === "java") {
-            point++;
-            console.log(point);
+
+        if (counter === 3) {
+            if(inputResponse.get(0).value === "One piece" ||inputResponse.get(0).value === "one piece") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 3: Faux la réponse été, One piece");
+                console.log(wrongAnswer);
+            }
         }
 
+        if (counter === 4) {
+            if(inputResponse.get(0).value === "Burj Khalifa" ||inputResponse.get(0).value === "burj khalifa") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 4: Faux la réponse été, Burj khalifa");
+                console.log(wrongAnswer);
+            }
+        }
+
+        if (counter === 5) {
+            if(inputResponse.get(0).value === "30" ||inputResponse.get(0).value === "30 saisons") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 5: Faux la réponse été, 30");
+                console.log(wrongAnswer);
+            }
+        }
+
+        if (counter === 6) {
+            if(inputResponse.get(0).value === "Ninho" ||inputResponse.get(0).value === "ninho") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 6: Faux la réponse été, Ninho");
+                console.log(wrongAnswer);
+            }
+        }
+
+        if (counter === 7) {
+            if(inputResponse.get(0).value === "Baby Shark" ||inputResponse.get(0).value === "baby shark" ||inputResponse.get(0).value === "BabyShark") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 7: Faux la réponse été, Baby Shark");
+                console.log(wrongAnswer);
+            }
+        }
+
+        if (counter === 8) {
+            if(inputResponse.get(0).value === "Logitech G502" ||inputResponse.get(0).value ==="logitech G502" ||inputResponse.get(0).value === "logitech g502") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 8: Faux la réponse été, Logitech G502");
+                console.log(wrongAnswer);
+            }
+        }
+
+        if (counter === 9) {
+            if(inputResponse.get(0).value === "Minecraft" ||inputResponse.get(0).value === "minecraft") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 9: Faux la réponse été, Minecraft");
+                console.log(wrongAnswer);
+            }
+        }
+
+        if (counter === 10) {
+            if(questions[9] && inputResponse.get(0).value === "Java" ||inputResponse.get(0).value === "java") {
+                point++;
+                console.log(point);
+            }
+            else {
+                wrongAnswer.push("Question 10: Faux la réponse été, Java");
+                console.log(wrongAnswer);
+            }
+        }
         counter++;
+
     }
 
     else if (counter === questions.length) {
-        $('#containerQuestions').html('<h1>Votre score: </h1>' + `${point.toString()}/9` + "<br>" + `Les réponses aux questions de 1 à 10 sont: -`).append("<p id='paraAnswer'></p>")
+        $('#containerQuestions').html('<h1>Votre score: </h1>' + `${point.toString()}/9` + "<br>").append("<p id='paraAnswer'></p>")
 
-        for (let i = 0; i < reponse.length; i++) {
-            $('#paraAnswer').html('');
+        for (let i = 0; i < wrongAnswer.length; i++){
+            document.getElementById('paraAnswer').innerHTML += (wrongAnswer[i] + "<br>");
+            console.log(wrongAnswer[i]);
         }
     }
-
-
 })
