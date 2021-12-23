@@ -152,10 +152,15 @@ $('#startGame').click(function () {
     //A simple conditions for print score and the wronganswer table on a <p>.
     else if (counter === questions.length) {
 
+
         $('#containerQuestions').html('<h1>Votre score: </h1>' + `${point.toString()}/9` + "<br>").append("<p id='paraAnswer'></p>")
 
         for (let i = 0; i < wrongAnswer.length; i++) {
             document.getElementById('paraAnswer').innerHTML += (wrongAnswer[i] + "<br>");
+            setTimeout(function () {
+                location.reload()
+            },10000)
+
         }
     }
 })
