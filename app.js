@@ -153,7 +153,7 @@ $('#startGame').click(function () {
     else if (counter === questions.length) {
 
 
-        $('#containerQuestions').html('<h1>Votre score: </h1>' + `${point.toString()}/9` + "<br>").append("<p id='paraAnswer'></p>")
+        $('#containerQuestions').html('<h1>Votre score: </h1>' + `${point.toString()}/10` + "<br>").append("<p id='paraAnswer'></p>")
 
         for (let i = 0; i < wrongAnswer.length; i++) {
             document.getElementById('paraAnswer').innerHTML += (wrongAnswer[i] + "<br>");
